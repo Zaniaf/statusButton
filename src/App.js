@@ -45,7 +45,7 @@ class App extends Component {
   checking = () => { // The big function that does the trick. Figured to use switch statement to test for the 3 different user cases
     
     switch(this.state.userType) { // Takes as argument the user type that we have and works the cases accordingly. 
-                                  // Figured to start checking from top to bottom, so that cases like cancelled and closed are excluded easily
+                                  // Figured to start checking from bottom to top, so that cases like cancelled and closed are excluded easily
       case 'BACK_OFFICE':
       
         if (this.state.isCancelled === true && this.state.isClosed === true) {
@@ -147,7 +147,8 @@ class App extends Component {
         <Button className="" name={this.state.statusOff}/>
         <Button className="" name={this.state.statusSupp}/>
         <Button className="" name={this.state.statusUse}/>
-      </div> // I know I named the components Buttons and even built inside a button element, it could be a Div or some text, doesn't matter. As long as it's working!
+      </div> 
+      // I know I named the components Buttons and even built inside a button element, it could be a Div or some text, doesnt matter. As long as its working!
     );
   }
 }
